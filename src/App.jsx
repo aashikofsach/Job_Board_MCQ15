@@ -18,7 +18,7 @@ const EXAMPLE_RESPONSE = {
 }
 
 function App() {
-  const [items, setItems] = useState([EXAMPLE_RESPONSE , EXAMPLE_RESPONSE]);
+  const [items, setItems] = useState([EXAMPLE_RESPONSE]);
 
 
   return (
@@ -34,7 +34,7 @@ function App() {
                 items.map((item , index)=> <JobPosting {...item} key={item.id} />)
               }
             </div>
-            <button>Load More Jobs </button>
+            <button className='btn__load'>Load More Jobs </button>
           </div>
         }
 

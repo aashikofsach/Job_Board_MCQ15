@@ -6,7 +6,7 @@ function  JobPosting({time,by,title,url}) {
   return (
     <div role='listitem' className='item'>
         <h2 className='post__title'><a href={url} target='_blank' rel='noopener' className={url ? "" : "inactive"}>{title}</a></h2>
-        <span>By - {by} {formatTime} </span>
+        <span className='post__metadata'>By - {by} {formatTime} </span>
     </div>
   )
 }
