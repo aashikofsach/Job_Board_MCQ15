@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 import JobPosting from './components/JobPosting';
 
@@ -18,8 +18,34 @@ const EXAMPLE_RESPONSE = {
 }
 
 function App() {
-  const [items, setItems] = useState([EXAMPLE_RESPONSE]);
+  const [items, setItems] = useState([]);
+  const [itemIds, setItemIds] = useState(null);
+  const [fetchingDetails, setFetchingDetails] = useState(false);
+  const [curPage , setCurPage] = useState(0);
 
+
+  const fetchItem = async(curPage)=>
+  {
+    setCurPage(curPage);
+    setFetchingDetails(true);
+
+    let itemsList = itemIds;
+    if(itemsList === null)
+    {
+      const response = await fetch(`${API_END_POINTS}/jobstories.json`);
+      itemsList = await response.json();
+      setItemIds(itemsList)
+    }
+console.log(itemsList)
+const itemIdsForPage = itemsList;
+const item
+
+  }
+  useEffect(() => {
+  
+    if(curPage ===0 ) fetchItem(curPage);
+  }, [])
+  
 
   return (
     <div>
