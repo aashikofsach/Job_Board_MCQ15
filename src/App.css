@@ -65,3 +65,7 @@ a:hover {
 .btn__load:hover {
   background-color: #df600b;
 }
+
+.btn__load:disabled {
+  background-color: grey;
+}
